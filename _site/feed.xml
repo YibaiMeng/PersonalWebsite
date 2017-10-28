@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Your awesome title</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://yourdomain.com/</link>
+    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 29 Oct 2017 00:29:09 +0800</pubDate>
+    <lastBuildDate>Sun, 29 Oct 2017 00:29:09 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Green Function Method, and reciporcity</title>
+        <description>&lt;p&gt;We know that the core of electrostatic problems is Possion’s equation:&lt;/p&gt;
+
+&lt;p&gt;\[
+\nabla^2V(\vec{x})=-\frac{\rho(\vec{x})}{\epsilon_0}
+\]&lt;/p&gt;
+
+&lt;p&gt;Solving the special case where &lt;script type=&quot;math/tex&quot;&gt;\rho=0&lt;/script&gt; ,that is, the Laplace equation, is easier(not &lt;em&gt;easy&lt;/em&gt;, just a tiny bit easier). There’s a variety of method avaiable, for example separation of variables. Also, due to numerous properties of the Laplace equation, solving it numerical is also easier. However, for most practical problems, there’s bound to be some charges. So what can we do?&lt;/p&gt;
+
+&lt;p&gt;Well, not all boundary problems are &lt;em&gt;that&lt;/em&gt; diffcult to solve! Boundary problems that only include point charges are (a tiny bit) easier. For example, there’s the method of images that we could make use of. So, could we utilize the results of point charge problem and apply them to general situations? The answer is an absolute yes!&lt;/p&gt;
+
+&lt;h2 id=&quot;diracs-delta-function&quot;&gt;Dirac’s delta function&lt;/h2&gt;
+&lt;p&gt;To describe the charge density of point charges, we invent the Dirac delta &lt;em&gt;function&lt;/em&gt;:
+&lt;script type=&quot;math/tex&quot;&gt;\delta(x) = 0&lt;/script&gt;
+when &lt;script type=&quot;math/tex&quot;&gt;x \ne 0&lt;/script&gt;, and
+&lt;script type=&quot;math/tex&quot;&gt;\delta(x) = \infty&lt;/script&gt;
+when &lt;script type=&quot;math/tex&quot;&gt;x = 0&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note that this is not a literal function. It’s actually a distribution, a limit of functions. For example, the standard normal distribution
+&lt;script type=&quot;math/tex&quot;&gt;\frac{1}{2\pi\sqrt{\sigma}} e^{-\frac{x^2}{2\sigma^2}}&lt;/script&gt;
+will &lt;em&gt;become&lt;/em&gt; the delta function when &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; approches zero. The rigorous defination of the delta function is done in this way.&lt;/p&gt;
+
+&lt;p&gt;A point charge occupies infitismal space, yet carries a finite amount of charge.  So while the delta function is infinite at zero, it’s integral is not. That is,
+&lt;script type=&quot;math/tex&quot;&gt;\int{\delta(x)dx} = 1&lt;/script&gt;
+for &lt;em&gt;any&lt;/em&gt; interval which contains zero, and
+&lt;script type=&quot;math/tex&quot;&gt;\int{\delta(x)dx} = 0&lt;/script&gt;
+for all the intervals without. The “one” there is chosen to keep things simple. Any finite number will do. In fact, one should think of the delta function as a &lt;em&gt;symbol&lt;/em&gt; that can only be used under the integral. For example, one of delta function’s most important property:
+&lt;script type=&quot;math/tex&quot;&gt;\int{f(x)\delta(x)dx} = f(0)&lt;/script&gt;
+where &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is some ordinary function. Only the value of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; at zero matters. Everything else is swept “under the rug”. It is best to think of the delta function as something waiting to be integrated.&lt;/p&gt;
+
+&lt;p&gt;Of course, is easy to generalize  the function to more dimensions. Simply have the integral integrate over &lt;em&gt;volume&lt;/em&gt;, instead of length. Also, its easy to change the point where the value is infinte. For example, &lt;script type=&quot;math/tex&quot;&gt;\delta(x-3)&lt;/script&gt; is infinite at &lt;script type=&quot;math/tex&quot;&gt;x=3&lt;/script&gt;, and critical point here is three.&lt;/p&gt;
+
+&lt;p&gt;So now we can describe a point charges’ density using the delta function. A point charge &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; at &lt;script type=&quot;math/tex&quot;&gt;\vec{x}&#39;&lt;/script&gt;  could be represented as
+&lt;script type=&quot;math/tex&quot;&gt;\rho(\vec{x}) = q\delta(\vec{x} - \vec{x}&#39;)&lt;/script&gt;
+note the delta function here is its three dimensional generalization.&lt;/p&gt;
+
+&lt;h2 id=&quot;green-function&quot;&gt;Green Function&lt;/h2&gt;
+
+&lt;p&gt;Now we are ready to tackle the real challenge.  The potential a point charge at &lt;script type=&quot;math/tex&quot;&gt;x&#39;&lt;/script&gt; causes satisfies Possions equation:
+&lt;script type=&quot;math/tex&quot;&gt;\nabla^2V(\vec{x}) = -\frac{q}{\epsilon_0}\delta(\vec{x} - \vec{x}&#39;)&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;#&lt;/h1&gt;
+
+&lt;p&gt;Edited!&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\frac{go}{to^hell}&lt;/script&gt;
+\[ 
+|\psi_1\rangle = a|0\rangle + b|1\rangle
+\]&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 12 Oct 2017 20:13:46 +0800</pubDate>
+        <link>http://yourdomain.com/electrodynamics,/circuit/analysis/2017/10/12/Green-Function-Method-and-reciporcity.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/electrodynamics,/circuit/analysis/2017/10/12/Green-Function-Method-and-reciporcity.html</guid>
+        
+        
+        <category>electrodynamics,</category>
+        
+        <category>circuit</category>
+        
+        <category>analysis</category>
+        
+      </item>
+    
+  </channel>
+</rss>
