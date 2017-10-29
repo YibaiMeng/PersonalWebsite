@@ -7,13 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Setting Up MathJax in a Jekyll Blog</title>
-  <meta name="description" content="*I’m greatly aided by [Soham Bhattacharyya’s answer][https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll/46349188#46349188] on stack overf...">
+  <meta name="description" content="I’m greatly aided by Soham Bhattacharyya’s answer on stack overflow. Thanks a lot!">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://www.mengyibai.cn/2017/10/29/setting-up-MathJax.html">
   <link rel="alternate" type="application/rss+xml" title="yibai@pku" href="http://www.mengyibai.cn/feed.xml">
-  <script type="text/javascript" async
-src="/js/mathjax.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 </head>
 
@@ -64,11 +64,11 @@ src="/js/mathjax.js"></script>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>*I’m greatly aided by [Soham Bhattacharyya’s answer][https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll/46349188#46349188] on <code class="highlighter-rouge">stack overflow</code>. Thanks a lot!`</p>
+    <p><em>I’m greatly aided by <a href="https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll/46349188#46349188">Soham Bhattacharyya’s answer</a> on <code class="highlighter-rouge">stack overflow</code>. Thanks a lot!</em></p>
 
 <p>It would be a great convenience to use be about to use LaTex in my blog. After all, I’m writing a technical blog, so I certainly need someway to show math equations. Actually, <code class="highlighter-rouge">html</code> has some way of showing math symbols and equations: <code class="highlighter-rouge">MathML</code>, or Math Markup Language. It is absolutely lousy, and has very limited support among browsers. Even Chrome doesn’t support it! So we turn to a not so native way—by using JavaScript to render the symbols.</p>
 
-<p>There exist a library for showing math symbols. All you need to do is write LaTex and the script would do the rendering for you. It’s called [MathJax][https://www.mathjax.org/], a 60 KiB JavaScript script that does all the dirty work. I’ll show you how to integrate it in Jekyll.</p>
+<p>There exist a library for showing math symbols. All you need to do is write LaTex and the script would do the rendering for you. It’s called <a href="https://www.mathjax.org/">MathJax</a>, a 60 KiB JavaScript script that does all the dirty work. I’ll show you how to integrate it in Jekyll.</p>
 
 <p>There are numerous guides avaliable on how to integrate MathJax into Jekyll. But many of the guides are either unclear, conflicting or obsolete. So after some experimentation, I’ll show you a way that’s guarenteed to work.</p>
 
@@ -77,13 +77,13 @@ src="/js/mathjax.js"></script>
 <p>Then add this code snippet just before the <code class="highlighter-rouge">head</code> tag. To do so, go to the <code class="highlighter-rouge">head.html</code> file in the <code class="highlighter-rouge">_includes</code> directory. Note its HEAD, not HEADER. Head is for the contents inside the <code class="highlighter-rouge">&lt;head&gt;</code> element in the html document, the place where you put all the scripts and metadatum, while “header” is for the uppermost part of the page. Add this line:</p>
 <div class="language-javascript highlighter-rouge"><pre class="codehilite"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">async</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span></code></pre></div>
-<p>The <code class="highlighter-rouge">TeX-AMS-MML_HTMLorMML</code> is for, quoting the [MathJax document][http://docs.mathjax.org/en/latest/configuration.html]:</p>
+<p>The <code class="highlighter-rouge">TeX-AMS-MML_HTMLorMML</code> is for, quoting the <a href="http://docs.mathjax.org/en/latest/configuration.html">MathJax document</a>:</p>
 <blockquote>
   <p>which loads MathJax with a configuration file that includes everything you need in order to enter mathematics in either TeX, LaTeX, or MathML notation, and produces output using MathML if MathML if the browser supports that well enough, or HTML-with-CSS otherwise.
 You could try other configrations.</p>
 </blockquote>
 
-<p>And is done! (Note that when running a local Jekyll server, the <code class="highlighter-rouge">_config.yml</code> file would not be automatically incoperated into the final build when it’s changed. So restart the server to see the result.) To render the equations, write LaTex as you usually would. For inline, use <code class="highlighter-rouge">\( ... \)</code>. As for block, use <code class="highlighter-rouge">\[ ... \]</code>. Actually, the slashes <code class="highlighter-rouge">\</code> would need escaping, so what you’d acutally type is <code class="highlighter-rouge">\\( blahblahblah \\)</code> and <code class="highlighter-rouge">\\[ blublublu\\]</code>, respectively.</p>
+<p>And it’s done! (Note that when running a local Jekyll server, the <code class="highlighter-rouge">_config.yml</code> file would not be automatically incoperated into the final build when it’s changed. So restart the server to see the result.) To render the equations, write LaTex as you usually would. For inline, use <code class="highlighter-rouge">\( ... \)</code>. As for block, use <code class="highlighter-rouge">\[ ... \]</code>. Actually, the slashes <code class="highlighter-rouge">\</code> would need escaping, so what you’d acutally type is <code class="highlighter-rouge">\\( blahblahblah \\)</code> and <code class="highlighter-rouge">\\[ blublublu\\]</code>, respectively.</p>
 
 <p>Examples:
 inline: \( 1/x^{2} \)
@@ -91,6 +91,7 @@ and block:
 \[ 
 \frac{1}{n^{2}} 
 \]</p>
+
 
   </div>
 

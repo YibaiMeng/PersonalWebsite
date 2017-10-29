@@ -6,17 +6,17 @@
 </description>
     <link>http://www.mengyibai.cn/</link>
     <atom:link href="http://www.mengyibai.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Oct 2017 23:56:15 +0800</pubDate>
-    <lastBuildDate>Sun, 29 Oct 2017 23:56:15 +0800</lastBuildDate>
+    <pubDate>Mon, 30 Oct 2017 00:04:38 +0800</pubDate>
+    <lastBuildDate>Mon, 30 Oct 2017 00:04:38 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Setting Up MathJax in a Jekyll Blog</title>
-        <description>&lt;p&gt;*I’m greatly aided by [Soham Bhattacharyya’s answer][https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll/46349188#46349188] on &lt;code class=&quot;highlighter-rouge&quot;&gt;stack overflow&lt;/code&gt;. Thanks a lot!`&lt;/p&gt;
+        <description>&lt;p&gt;&lt;em&gt;I’m greatly aided by &lt;a href=&quot;https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll/46349188#46349188&quot;&gt;Soham Bhattacharyya’s answer&lt;/a&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;stack overflow&lt;/code&gt;. Thanks a lot!&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;It would be a great convenience to use be about to use LaTex in my blog. After all, I’m writing a technical blog, so I certainly need someway to show math equations. Actually, &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt; has some way of showing math symbols and equations: &lt;code class=&quot;highlighter-rouge&quot;&gt;MathML&lt;/code&gt;, or Math Markup Language. It is absolutely lousy, and has very limited support among browsers. Even Chrome doesn’t support it! So we turn to a not so native way—by using JavaScript to render the symbols.&lt;/p&gt;
 
-&lt;p&gt;There exist a library for showing math symbols. All you need to do is write LaTex and the script would do the rendering for you. It’s called [MathJax][https://www.mathjax.org/], a 60 KiB JavaScript script that does all the dirty work. I’ll show you how to integrate it in Jekyll.&lt;/p&gt;
+&lt;p&gt;There exist a library for showing math symbols. All you need to do is write LaTex and the script would do the rendering for you. It’s called &lt;a href=&quot;https://www.mathjax.org/&quot;&gt;MathJax&lt;/a&gt;, a 60 KiB JavaScript script that does all the dirty work. I’ll show you how to integrate it in Jekyll.&lt;/p&gt;
 
 &lt;p&gt;There are numerous guides avaliable on how to integrate MathJax into Jekyll. But many of the guides are either unclear, conflicting or obsolete. So after some experimentation, I’ll show you a way that’s guarenteed to work.&lt;/p&gt;
 
@@ -25,13 +25,13 @@
 &lt;p&gt;Then add this code snippet just before the &lt;code class=&quot;highlighter-rouge&quot;&gt;head&lt;/code&gt; tag. To do so, go to the &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt; file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; directory. Note its HEAD, not HEADER. Head is for the contents inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; element in the html document, the place where you put all the scripts and metadatum, while “header” is for the uppermost part of the page. Add this line:&lt;/p&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;TeX-AMS-MML_HTMLorMML&lt;/code&gt; is for, quoting the [MathJax document][http://docs.mathjax.org/en/latest/configuration.html]:&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;TeX-AMS-MML_HTMLorMML&lt;/code&gt; is for, quoting the &lt;a href=&quot;http://docs.mathjax.org/en/latest/configuration.html&quot;&gt;MathJax document&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;which loads MathJax with a configuration file that includes everything you need in order to enter mathematics in either TeX, LaTeX, or MathML notation, and produces output using MathML if MathML if the browser supports that well enough, or HTML-with-CSS otherwise.
 You could try other configrations.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;And is done! (Note that when running a local Jekyll server, the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file would not be automatically incoperated into the final build when it’s changed. So restart the server to see the result.) To render the equations, write LaTex as you usually would. For inline, use &lt;code class=&quot;highlighter-rouge&quot;&gt;\( ... \)&lt;/code&gt;. As for block, use &lt;code class=&quot;highlighter-rouge&quot;&gt;\[ ... \]&lt;/code&gt;. Actually, the slashes &lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt; would need escaping, so what you’d acutally type is &lt;code class=&quot;highlighter-rouge&quot;&gt;\\( blahblahblah \\)&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;\\[ blublublu\\]&lt;/code&gt;, respectively.&lt;/p&gt;
+&lt;p&gt;And it’s done! (Note that when running a local Jekyll server, the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file would not be automatically incoperated into the final build when it’s changed. So restart the server to see the result.) To render the equations, write LaTex as you usually would. For inline, use &lt;code class=&quot;highlighter-rouge&quot;&gt;\( ... \)&lt;/code&gt;. As for block, use &lt;code class=&quot;highlighter-rouge&quot;&gt;\[ ... \]&lt;/code&gt;. Actually, the slashes &lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt; would need escaping, so what you’d acutally type is &lt;code class=&quot;highlighter-rouge&quot;&gt;\\( blahblahblah \\)&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;\\[ blublublu\\]&lt;/code&gt;, respectively.&lt;/p&gt;
 
 &lt;p&gt;Examples:
 inline: \( 1/x^{2} \)
@@ -39,6 +39,7 @@ and block:
 \[ 
 \frac{1}{n^{2}} 
 \]&lt;/p&gt;
+
 </description>
         <pubDate>Sun, 29 Oct 2017 23:14:00 +0800</pubDate>
         <link>http://www.mengyibai.cn/2017/10/29/setting-up-MathJax.html</link>
