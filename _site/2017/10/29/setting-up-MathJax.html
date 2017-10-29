@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Setting Up MathJax in a Jekyll Blog</title>
+  <meta name="description" content="*I’m greatly aided by [Soham Bhattacharyya’s answer][https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll/46349188#46349188] on stack overf...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://www.mengyibai.cn/2017/10/29/setting-up-MathJax.html">
+  <link rel="alternate" type="application/rss+xml" title="yibai@pku" href="http://www.mengyibai.cn/feed.xml">
+  <script type="text/javascript" async
+src="/js/mathjax.js"></script>
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">yibai@pku</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Setting Up MathJax in a Jekyll Blog</h1>
+    <p class="post-meta"><time datetime="2017-10-29T23:14:00+08:00" itemprop="datePublished">Oct 29, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>*I’m greatly aided by [Soham Bhattacharyya’s answer][https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll/46349188#46349188] on <code class="highlighter-rouge">stack overflow</code>. Thanks a lot!`</p>
+
+<p>It would be a great convenience to use be about to use LaTex in my blog. After all, I’m writing a technical blog, so I certainly need someway to show math equations. Actually, <code class="highlighter-rouge">html</code> has some way of showing math symbols and equations: <code class="highlighter-rouge">MathML</code>, or Math Markup Language. It is absolutely lousy, and has very limited support among browsers. Even Chrome doesn’t support it! So we turn to a not so native way—by using JavaScript to render the symbols.</p>
+
+<p>There exist a library for showing math symbols. All you need to do is write LaTex and the script would do the rendering for you. It’s called [MathJax][https://www.mathjax.org/], a 60 KiB JavaScript script that does all the dirty work. I’ll show you how to integrate it in Jekyll.</p>
+
+<p>There are numerous guides avaliable on how to integrate MathJax into Jekyll. But many of the guides are either unclear, conflicting or obsolete. So after some experimentation, I’ll show you a way that’s guarenteed to work.</p>
+
+<p>First, check what markdown editor you are using. Check the <code class="highlighter-rouge">_config.yml</code> file in the root directory of your blog. If the setting for <code class="highlighter-rouge">markdown</code> is set to <code class="highlighter-rouge">kramdown</code>, then bingo! Kramdown offers built-in support. Add the line <code class="highlighter-rouge">mathjax: true</code> after that <code class="highlighter-rouge">markdown: krandown</code> line.</p>
+
+<p>Then add this code snippet just before the <code class="highlighter-rouge">head</code> tag. To do so, go to the <code class="highlighter-rouge">head.html</code> file in the <code class="highlighter-rouge">_includes</code> directory. Note its HEAD, not HEADER. Head is for the contents inside the <code class="highlighter-rouge">&lt;head&gt;</code> element in the html document, the place where you put all the scripts and metadatum, while “header” is for the uppermost part of the page. Add this line:</p>
+<div class="language-javascript highlighter-rouge"><pre class="codehilite"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">async</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div>
+<p>The <code class="highlighter-rouge">TeX-AMS-MML_HTMLorMML</code> is for, quoting the [MathJax document][http://docs.mathjax.org/en/latest/configuration.html]:</p>
+<blockquote>
+  <p>which loads MathJax with a configuration file that includes everything you need in order to enter mathematics in either TeX, LaTeX, or MathML notation, and produces output using MathML if MathML if the browser supports that well enough, or HTML-with-CSS otherwise.
+You could try other configrations.</p>
+</blockquote>
+
+<p>And is done! (Note that when running a local Jekyll server, the <code class="highlighter-rouge">_config.yml</code> file would not be automatically incoperated into the final build when it’s changed. So restart the server to see the result.) To render the equations, write LaTex as you usually would. For inline, use <code class="highlighter-rouge">\( ... \)</code>. As for block, use <code class="highlighter-rouge">\[ ... \]</code>. Actually, the slashes <code class="highlighter-rouge">\</code> would need escaping, so what you’d acutally type is <code class="highlighter-rouge">\\( blahblahblah \\)</code> and <code class="highlighter-rouge">\\[ blublublu\\]</code>, respectively.</p>
+
+<p>Examples:
+inline: \( 1/x^{2} \)
+and block:
+\[ 
+\frac{1}{n^{2}} 
+\]</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">yibai@pku</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>yibai@pku</li>
+          <li><a href="mailto:mengyibai@pku.edu.cn">mengyibai@pku.edu.cn</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/YibaiMeng"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">YibaiMeng</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Yibai's personal blog, where you could see all sorts of crazy stuff
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
