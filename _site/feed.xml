@@ -6,9 +6,63 @@
 </description>
     <link>http://www.mengyibai.cn/</link>
     <atom:link href="http://www.mengyibai.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Oct 2017 00:06:40 +0800</pubDate>
-    <lastBuildDate>Mon, 30 Oct 2017 00:06:40 +0800</lastBuildDate>
+    <pubDate>Wed, 01 Nov 2017 00:32:25 +0800</pubDate>
+    <lastBuildDate>Wed, 01 Nov 2017 00:32:25 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>the Gibbs Phenomenon</title>
+        <description>&lt;p&gt;Fourier transformation is awesome! One example of its awesomeness is how a arbitrary function, even one with a finite number of discontinuities, could be approximated to arbitrary precision using Fourier sum. Useful for generating square waves using harmonic oscillators. But there’s a question: for signals with &lt;em&gt;jump discontinuities&lt;/em&gt;, such as the aforementioned square wave, could the Fourier sum model the &lt;em&gt;jump&lt;/em&gt; accurately? After all, how can you sum a bunch of smooth functions and end up with a discontinuities one? Well, the answer is yes and no. And that’s what the Gibbs Phenomenon is: the imperfect representation of jumps by Fourier series.&lt;/p&gt;
+
+&lt;h1 id=&quot;gibbs-phenomenon&quot;&gt;Gibbs Phenomenon&lt;/h1&gt;
+
+&lt;p&gt;A Fourier sum 
+\[
+F_N(t)=\sum_{k=1}^{N}{C_ke^{ik\omega t}}
+\]
+is used to approximate periodic function \(F(t) \). For the piecewise continuous parts in \( F(t) \), when &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; gets bigger, the sum approaches the function in a uneventful way. But right after the jump, the sum will always overshoot a little bit, then oscillate for a while. The &lt;em&gt;spike&lt;/em&gt; will happen, no matter how big &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; gets. Or in formal words:
+For a function &lt;script type=&quot;math/tex&quot;&gt;F(t)&lt;/script&gt; which has a jump at &lt;script type=&quot;math/tex&quot;&gt;$x_0&lt;/script&gt;, that is,
+\[
+\lim_{t \to t_0^+}{F(t)} = F_1
+\]
+while
+\[
+\lim_{t \to t_0^-}{F(t)} = F_1-a
+\]
+the following limit exists:
+\[
+\lim_{N \to +\infty}{F_N(t_0+\frac{T}{2N})} = F_1 + Wa
+\]
+where &lt;script type=&quot;math/tex&quot;&gt;W&lt;/script&gt; is a number with the first few digits as
+\[
+W = 0.08949\dots
+\]
+Similar limits exists just before the jump.&lt;/p&gt;
+
+&lt;p&gt;This result is troubling: with a spike of one tenths of the original function, how can you call the Fourier series converging? Well, first, even thought the spikes will never go away, the place the spike happens is getting closer and closer to the jump point, making the spike narrower and narrower. Unlike the Dirac delta function, the height of the spike remain unchanged, so the area under the spike, or in a similar measure, the difference in power for signals, has a limit of zero. So in terms of energy, the convergence is sound.&lt;/p&gt;
+
+&lt;p&gt;Also, remember what the Dirichlet conditions says:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The Fourier series is convergent where the original function is continuous&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Simply &lt;em&gt;convergent&lt;/em&gt;, or pointwise convergent, not &lt;em&gt;uniform convergent&lt;/em&gt;! The Gibbs effect is an example of not uniform convergent. The series is uniform convergent on any domain between the two neighboring points of discontinuity, but not so on the open domain &lt;script type=&quot;math/tex&quot;&gt;(t_{dis}, t_{nextDis})&lt;/script&gt; where the two &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;s are the two discontinuities. Only pointwise convergence here. Also, thought the series is convergent at the jump point themselves, they converge to the average of the left and right limits at that point. So now the Gibbs effect seems not too unreasonable. Or as the Wikipedia article puts,&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;There is no contradiction in the overshoot converging to a non-zero amount, but the limit of the partial sums having no overshoot.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;in-a-physical-perspective&quot;&gt;In a Physical Perspective&lt;/h1&gt;
+&lt;p&gt;From a signal processing point of view, the Gibbs phenomenon is the step response of a low pass filter. A ideal brick-wall low pass filter actually. With the transfer function of a low pass filter being a sinc function, the overshoot and the ripples could be seen as the result of convolving the step function with the sinc function. The oscillation of the sinc is the cause of the overshoot.&lt;/p&gt;
+
+&lt;p&gt;To be precise, the phenomenon is a &lt;em&gt;ringing&lt;/em&gt; one. Not only does the signal overshoots, it also undershoots. It’s actually called a &lt;em&gt;ringing artifact&lt;/em&gt;, a important problem in signal processing.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 31 Oct 2017 23:30:00 +0800</pubDate>
+        <link>http://www.mengyibai.cn/2017/10/31/Gibbs-phenomenon.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/2017/10/31/Gibbs-phenomenon.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Setting Up MathJax in a Jekyll Blog</title>
