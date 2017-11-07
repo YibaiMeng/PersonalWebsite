@@ -1,0 +1,7 @@
+---
+layout: post
+title: Atom
+date: '2017-11-08 01:38'
+---
+
+Atom is a great great great editor! It made my editing blogs much easier! I'll document its usage another day.
