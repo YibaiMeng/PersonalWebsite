@@ -14,7 +14,7 @@ Solving the special case where $$\rho=0$$ ,that is, the Laplace equation, is eas
 Well, not all boundary problems are *that* diffcult to solve! Boundary problems that only include point charges are (a tiny bit) easier. For example, there's the method of images that we could make use of. So, could we utilize the results of point charge problem and apply them to general situations? The answer is an absolute yes!
 
 ## Dirac's delta function
-To describe the charge density of point charges, we invent the Dirac delta *function*:
+To describe the charge density of point charges, we introduce the Dirac delta *function*:
 $$
 \delta(x) = 0
 $$
@@ -61,26 +61,6 @@ $$
 
 
 
-
-##
-
-Edited!
-
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-
-
-{% endhighlight %}
-$$ \frac{go}{to^hell} $$
 \\[
 |\psi_1\rangle = a|0\rangle + b|1\rangle
 \\]
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/

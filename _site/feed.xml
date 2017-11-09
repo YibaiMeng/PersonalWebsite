@@ -6,9 +6,75 @@
 </description>
     <link>http://www.mengyibai.cn/</link>
     <atom:link href="http://www.mengyibai.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Nov 2017 00:32:25 +0800</pubDate>
-    <lastBuildDate>Wed, 01 Nov 2017 00:32:25 +0800</lastBuildDate>
+    <pubDate>Thu, 09 Nov 2017 23:20:45 +0800</pubDate>
+    <lastBuildDate>Thu, 09 Nov 2017 23:20:45 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Compressing HTML files in Jekyll</title>
+        <description>&lt;p&gt;The HTML files Jekyll generates are standard and conforming, but one small problem remains: they have lots of whitespaces in them. It not only makes control freaks like me find it diffcult to read, but also for a little less efficent for the DOM parsers to parse as well. Also, it makes the website a little bit more data consuming. So I’ll setup a plugin to automatically simplifies the files when generating them.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 09 Nov 2017 23:11:00 +0800</pubDate>
+        <link>http://www.mengyibai.cn/2017/11/09/compressing-html-files-in-jekyll.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/2017/11/09/compressing-html-files-in-jekyll.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Atom</title>
+        <description>&lt;p&gt;Atom is a great great great editor! It made my editing blogs much easier! I’ll document its usage another day.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 08 Nov 2017 01:38:00 +0800</pubDate>
+        <link>http://www.mengyibai.cn/2017/11/08/atom.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/2017/11/08/atom.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Setting Up Openvpn</title>
+        <description>&lt;h1 id=&quot;setting-up-openvpn&quot;&gt;Setting up OpenVPN&lt;/h1&gt;
+
+&lt;p&gt;For obvious reasons, I need a VPN. After experimenting with PPTP, L2TP/IPSec, IPSec, I’ve decided to give &lt;a href=&quot;https://openvpn.net&quot;&gt;OpenVPN&lt;/a&gt; a try. So I signed up for ProtonVPN, a free (as in freedom) VPN service by the Swiss based organization ProtonMail. The experience is great, the stability even greater! So I decided to throw away my old IPSec configuration and switch to OpenVPN instead.&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-server-side-software&quot;&gt;Installing Server-Side Software&lt;/h2&gt;
+
+&lt;p&gt;The Server side software is not diffcult to install. You could use your server’s package manager to download a pre-built version, or complie it yourself. For example, in Ubuntu/Debian, use&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;sudo apt-get install openvpn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Or compile it like I did&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;wget https://swupdate.openvpn.org/community/releases/openvpn-2.4.4.tar.gz
+&lt;span class=&quot;c&quot;&gt;# use the up to date tar archive on https://openvpn.net&lt;/span&gt;
+tar xfz openvpn-2.4.4.tar.gz
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;openvpn-2.4.4
+./configure
+make
+make install &lt;span class=&quot;c&quot;&gt;# might need to put sudo before that&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note when configuring, a few error messages may appear. For the error &lt;code class=&quot;highlighter-rouge&quot;&gt;configure: error: ssl is required but missing&lt;/code&gt;, you will need to install &lt;code class=&quot;highlighter-rouge&quot;&gt;libssl-dev&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;sudo apt-get install libssl-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For the error &lt;code class=&quot;highlighter-rouge&quot;&gt;configure: error: lzo enabled but missing&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;sudo apt-get install liblzo2-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For the error &lt;code class=&quot;highlighter-rouge&quot;&gt;configure: error: libpam required but missing &lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;sudo apt-get install libpam0g-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Great thanks for &lt;a href=&quot;https://stackoverflow.com/users/2640725/deadcode&quot;&gt;deadcode&lt;/a&gt;’s &lt;a href=&quot;https://stackoverflow.com/a/28431851&quot;&gt;advice&lt;/a&gt; on Stack Overflow.&lt;/p&gt;
+
+&lt;p&gt;Next, set up PKI and CA! TODO&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Nov 2017 00:00:00 +0800</pubDate>
+        <link>http://www.mengyibai.cn/2017/11/03/Setting-Up-OpenVPN.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/2017/11/03/Setting-Up-OpenVPN.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>the Gibbs Phenomenon</title>
@@ -68,7 +134,7 @@ Similar limits exists just before the jump.&lt;/p&gt;
         <title>Setting Up MathJax in a Jekyll Blog</title>
         <description>&lt;p&gt;&lt;em&gt;I’m greatly aided by &lt;a href=&quot;https://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll/46349188#46349188&quot;&gt;Soham Bhattacharyya’s answer&lt;/a&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;stack overflow&lt;/code&gt;. Thanks a lot!&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;It would be a great convenience to use be about to use LaTex in my blog. After all, I’m writing a technical blog, so I certainly need someway to show math equations. Actually, &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt; has some way of showing math symbols and equations: &lt;code class=&quot;highlighter-rouge&quot;&gt;MathML&lt;/code&gt;, or Math Markup Language. It is absolutely lousy, and has very limited support among browsers. Even Chrome doesn’t support it! So we turn to a not so native way—by using JavaScript to render the symbols.&lt;/p&gt;
+&lt;p&gt;It would be a great convenience to use be able to use LaTex in my blog. After all, I’m writing a technical blog, so I certainly need someway to show math equations. Actually, &lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt; has some way of showing math symbols and equations: &lt;code class=&quot;highlighter-rouge&quot;&gt;MathML&lt;/code&gt;, or Math Markup Language. It is absolutely lousy, and has very limited support among browsers. Even Chrome doesn’t support it! So we turn to a not so native way—by using JavaScript to render the symbols.&lt;/p&gt;
 
 &lt;p&gt;There exist a library for showing math symbols. All you need to do is write LaTex and the script would do the rendering for you. It’s called &lt;a href=&quot;https://www.mathjax.org/&quot;&gt;MathJax&lt;/a&gt;, a 60 KiB JavaScript script that does all the dirty work. I’ll show you how to integrate it in Jekyll.&lt;/p&gt;
 
@@ -90,8 +156,8 @@ You could try other configrations.&lt;/p&gt;
 &lt;p&gt;Examples:
 inline: \( 1/x^{2} \)
 and block:
-\[ 
-\frac{1}{n^{2}} 
+\[
+\frac{1}{n^{2}}
 \]&lt;/p&gt;
 
 </description>
@@ -115,7 +181,7 @@ and block:
 &lt;p&gt;Well, not all boundary problems are &lt;em&gt;that&lt;/em&gt; diffcult to solve! Boundary problems that only include point charges are (a tiny bit) easier. For example, there’s the method of images that we could make use of. So, could we utilize the results of point charge problem and apply them to general situations? The answer is an absolute yes!&lt;/p&gt;
 
 &lt;h2 id=&quot;diracs-delta-function&quot;&gt;Dirac’s delta function&lt;/h2&gt;
-&lt;p&gt;To describe the charge density of point charges, we invent the Dirac delta &lt;em&gt;function&lt;/em&gt;:
+&lt;p&gt;To describe the charge density of point charges, we introduce the Dirac delta &lt;em&gt;function&lt;/em&gt;:
 &lt;script type=&quot;math/tex&quot;&gt;\delta(x) = 0&lt;/script&gt;
 when &lt;script type=&quot;math/tex&quot;&gt;x \ne 0&lt;/script&gt;, and
 &lt;script type=&quot;math/tex&quot;&gt;\delta(x) = \infty&lt;/script&gt;
@@ -144,32 +210,14 @@ note the delta function here is its three dimensional generalization.&lt;/p&gt;
 &lt;p&gt;Now we are ready to tackle the real challenge.  The potential a point charge at &lt;script type=&quot;math/tex&quot;&gt;x&#39;&lt;/script&gt; causes satisfies Possions equation:
 &lt;script type=&quot;math/tex&quot;&gt;\nabla^2V(\vec{x}) = -\frac{q}{\epsilon_0}\delta(\vec{x} - \vec{x}&#39;)&lt;/script&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;section&quot;&gt;#&lt;/h1&gt;
-
-&lt;p&gt;Edited!&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\frac{go}{to^hell}&lt;/script&gt;
-\[ 
+&lt;p&gt;\[
 |\psi_1\rangle = a|0\rangle + b|1\rangle
 \]&lt;/p&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
-
 </description>
         <pubDate>Thu, 12 Oct 2017 20:13:46 +0800</pubDate>
-        <link>http://www.mengyibai.cn/electrodynamics,/circuit/analysis/2017/10/12/Green-Function-Method-and-reciporcity.html</link>
-        <guid isPermaLink="true">http://www.mengyibai.cn/electrodynamics,/circuit/analysis/2017/10/12/Green-Function-Method-and-reciporcity.html</guid>
+        <link>http://www.mengyibai.cn/2017/10/12/Green-Function-Method-and-reciporcity.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/2017/10/12/Green-Function-Method-and-reciporcity.html</guid>
         
-        
-        <category>electrodynamics,</category>
-        
-        <category>circuit</category>
-        
-        <category>analysis</category>
         
       </item>
     
