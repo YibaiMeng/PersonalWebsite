@@ -2,7 +2,6 @@
 layout: post
 title:  "Green Function Method, and reciporcity"
 date:   2017-10-12 20:13:46 +0800
-categories: electrodynamics, circuit analysis
 ---
 We know that the core of electrostatic problems is Possion's equation:
 
@@ -10,9 +9,9 @@ We know that the core of electrostatic problems is Possion's equation:
 \nabla^2V(\vec{x})=-\frac{\rho(\vec{x})}{\epsilon_0}
 \\]
 
-Solving the special case where $$\rho=0$$ ,that is, the Laplace equation, is easier(not *easy*, just a tiny bit easier). There's a variety of method avaiable, for example separation of variables. Also, due to numerous properties of the Laplace equation, solving it numerical is also easier. However, for most practical problems, there's bound to be some charges. So what can we do?  
+Solving the special case where $$\rho=0$$ ,that is, the Laplace equation, is easier(not *easy*, just a tiny bit easier). There's a variety of method avaiable, for example separation of variables. Also, due to numerous properties of the Laplace equation, solving it numerical is also easier. However, for most practical problems, there's bound to be some charges. So what can we do?
 
-Well, not all boundary problems are *that* diffcult to solve! Boundary problems that only include point charges are (a tiny bit) easier. For example, there's the method of images that we could make use of. So, could we utilize the results of point charge problem and apply them to general situations? The answer is an absolute yes! 
+Well, not all boundary problems are *that* diffcult to solve! Boundary problems that only include point charges are (a tiny bit) easier. For example, there's the method of images that we could make use of. So, could we utilize the results of point charge problem and apply them to general situations? The answer is an absolute yes!
 
 ## Dirac's delta function
 To describe the charge density of point charges, we invent the Dirac delta *function*:
@@ -29,7 +28,7 @@ Note that this is not a literal function. It's actually a distribution, a limit 
 $$
 \frac{1}{2\pi\sqrt{\sigma}} e^{-\frac{x^2}{2\sigma^2}}
 $$
-will *become* the delta function when $$\sigma$$ approches zero. The rigorous defination of the delta function is done in this way. 
+will *become* the delta function when $$\sigma$$ approches zero. The rigorous defination of the delta function is done in this way.
 
 A point charge occupies infitismal space, yet carries a finite amount of charge.  So while the delta function is infinite at zero, it's integral is not. That is,
 $$
@@ -76,7 +75,7 @@ Jekyll also offers powerful support for code snippets:
 
 {% endhighlight %}
 $$ \frac{go}{to^hell} $$
-\\[ 
+\\[
 |\psi_1\rangle = a|0\rangle + b|1\rangle
 \\]
 
