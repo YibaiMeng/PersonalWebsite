@@ -12,9 +12,14 @@ description: > # this means to ignore newlines until "baseurl:"
       Yibai's personal blog, where you could see all sorts of crazy stuff
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.mengyibai.cn" # the base hostname & protocol for your site
-twitter_username: 
-github_username:  YibaiMeng
+twitter_username: shit
+github_username: YibaiMeng
+zhihu_username: yibaiafarensis
 
 # Build settings
 markdown: kramdown
 mathjax: true
+
+# compress HTML settings
+compress_html:
+  clippings: []

@@ -6,13 +6,33 @@
 </description>
     <link>http://www.mengyibai.cn/</link>
     <atom:link href="http://www.mengyibai.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Nov 2017 23:20:45 +0800</pubDate>
-    <lastBuildDate>Thu, 09 Nov 2017 23:20:45 +0800</lastBuildDate>
+    <pubDate>Fri, 10 Nov 2017 01:34:40 +0800</pubDate>
+    <lastBuildDate>Fri, 10 Nov 2017 01:34:40 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Compressing HTML files in Jekyll</title>
         <description>&lt;p&gt;The HTML files Jekyll generates are standard and conforming, but one small problem remains: they have lots of whitespaces in them. It not only makes control freaks like me find it diffcult to read, but also for a little less efficent for the DOM parsers to parse as well. Also, it makes the website a little bit more data consuming. So I’ll setup a plugin to automatically simplifies the files when generating them.&lt;/p&gt;
+
+&lt;p&gt;The plugin is called &lt;a href=&quot;http://jch.penibelst.de/&quot;&gt;jekyll-compress-html&lt;/a&gt;. It uses Liquid, the language Jekyll uses to describe the way to generate HTML files. To set it up, all you need to do is place the Liquid file &lt;code class=&quot;highlighter-rouge&quot;&gt;compress.html&lt;/code&gt; under the &lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; folder. Then add the following front matter before the &lt;code class=&quot;highlighter-rouge&quot;&gt;default.html&lt;/code&gt; template:&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;compress&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Rebuild your website and all should be in order!&lt;/p&gt;
+
+&lt;p&gt;A few settings are be available. Add the settings in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file. The defaults settings are:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;compress_html:
+  clippings: []
+  comments: []
+  endings: []
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;startings&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;endings&lt;/code&gt; are for removing optional starting and ending tags. I don’t wish to use it, as it would make the file XML non-conforming. Might cause a tiny bit of trouble for some browsers. &lt;code class=&quot;highlighter-rouge&quot;&gt;comments&lt;/code&gt; is for removing HTML comments. There are no comments here at all, so I’ll just leave it be. &lt;code class=&quot;highlighter-rouge&quot;&gt;clippings&lt;/code&gt; is an array of elements around which whitespace will be removed. Use &lt;code class=&quot;highlighter-rouge&quot;&gt;all&lt;/code&gt; will remove all which are safe to remove, which I did. Others are for debug purposes, which I left alone.&lt;/p&gt;
 </description>
         <pubDate>Thu, 09 Nov 2017 23:11:00 +0800</pubDate>
         <link>http://www.mengyibai.cn/2017/11/09/compressing-html-files-in-jekyll.html</link>
