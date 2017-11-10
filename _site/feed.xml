@@ -6,8 +6,8 @@
 </description>
     <link>http://www.mengyibai.cn/</link>
     <atom:link href="http://www.mengyibai.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Nov 2017 01:34:40 +0800</pubDate>
-    <lastBuildDate>Fri, 10 Nov 2017 01:34:40 +0800</lastBuildDate>
+    <pubDate>Fri, 10 Nov 2017 11:17:17 +0800</pubDate>
+    <lastBuildDate>Fri, 10 Nov 2017 11:17:17 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -102,7 +102,7 @@ make install &lt;span class=&quot;c&quot;&gt;# might need to put sudo before tha
 
 &lt;h1 id=&quot;gibbs-phenomenon&quot;&gt;Gibbs Phenomenon&lt;/h1&gt;
 
-&lt;p&gt;A Fourier sum 
+&lt;p&gt;A Fourier sum
 \[
 F_N(t)=\sum_{k=1}^{N}{C_ke^{ik\omega t}}
 \]
@@ -141,7 +141,6 @@ Similar limits exists just before the jump.&lt;/p&gt;
 &lt;p&gt;From a signal processing point of view, the Gibbs phenomenon is the step response of a low pass filter. A ideal brick-wall low pass filter actually. With the transfer function of a low pass filter being a sinc function, the overshoot and the ripples could be seen as the result of convolving the step function with the sinc function. The oscillation of the sinc is the cause of the overshoot.&lt;/p&gt;
 
 &lt;p&gt;To be precise, the phenomenon is a &lt;em&gt;ringing&lt;/em&gt; one. Not only does the signal overshoots, it also undershoots. It’s actually called a &lt;em&gt;ringing artifact&lt;/em&gt;, a important problem in signal processing.&lt;/p&gt;
-
 </description>
         <pubDate>Tue, 31 Oct 2017 23:30:00 +0800</pubDate>
         <link>http://www.mengyibai.cn/2017/10/31/Gibbs-phenomenon.html</link>
