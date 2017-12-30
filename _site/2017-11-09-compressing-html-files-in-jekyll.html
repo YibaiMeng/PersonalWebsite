@@ -1,0 +1,21 @@
+<p>The HTML files Jekyll generates are standard and conforming, but one small problem remains: they have lots of whitespaces in them. It not only makes control freaks like me find it diffcult to read, but also for a little less efficent for the DOM parsers to parse as well. Also, it makes the website a little bit more data consuming. So I’ll setup a plugin to automatically simplifies the files when generating them.</p>
+
+<p>The plugin is called <a href="http://jch.penibelst.de/">jekyll-compress-html</a>. It uses Liquid, the language Jekyll uses to describe the way to generate HTML files. To set it up, all you need to do is place the Liquid file <code class="highlighter-rouge">compress.html</code> under the <code class="highlighter-rouge">_layouts</code> folder. Then add the following front matter before the <code class="highlighter-rouge">default.html</code> template:</p>
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
+<span class="s">layout</span><span class="pi">:</span> <span class="s">compress</span>
+<span class="nn">---</span>
+</code></pre></div>
+<p>Rebuild your website and all should be in order!</p>
+
+<p>A few settings are be available. Add the settings in the <code class="highlighter-rouge">_config.yml</code> file. The defaults settings are:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>compress_html:
+  clippings: []
+  comments: []
+  endings: []
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []
+</code></pre></div>
+<p><code class="highlighter-rouge">startings</code> and <code class="highlighter-rouge">endings</code> are for removing optional starting and ending tags. I don’t wish to use it, as it would make the file XML non-conforming. Might cause a tiny bit of trouble for some browsers. <code class="highlighter-rouge">comments</code> is for removing HTML comments. There are no comments here at all, so I’ll just leave it be. <code class="highlighter-rouge">clippings</code> is an array of elements around which whitespace will be removed. Use <code class="highlighter-rouge">all</code> will remove all which are safe to remove, which I did. Others are for debug purposes, which I left alone.</p>

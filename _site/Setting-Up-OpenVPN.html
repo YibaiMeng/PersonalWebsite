@@ -1,0 +1,34 @@
+<h1 id="setting-up-openvpn">Setting up OpenVPN</h1>
+
+<p>For obvious reasons, I need a VPN. After experimenting with PPTP, L2TP/IPSec, IPSec, I’ve decided to give <a href="https://openvpn.net">OpenVPN</a> a try. So I signed up for ProtonVPN, a free (as in freedom) VPN service by the Swiss based organization ProtonMail. The experience is great, the stability even greater! So I decided to throw away my old IPSec configuration and switch to OpenVPN instead.</p>
+
+<h2 id="installing-server-side-software">Installing Server-Side Software</h2>
+
+<p>The Server side software is not diffcult to install. You could use your server’s package manager to download a pre-built version, or complie it yourself. For example, in Ubuntu/Debian, use</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo apt-get install openvpn
+</code></pre></div>
+
+<p>Or compile it like I did</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>wget https://swupdate.openvpn.org/community/releases/openvpn-2.4.4.tar.gz
+<span class="c"># use the up to date tar archive on https://openvpn.net</span>
+tar xfz openvpn-2.4.4.tar.gz
+<span class="nb">cd </span>openvpn-2.4.4
+./configure
+make
+make install <span class="c"># might need to put sudo before that</span>
+</code></pre></div>
+
+<p>Note when configuring, a few error messages may appear. For the error <code class="highlighter-rouge">configure: error: ssl is required but missing</code>, you will need to install <code class="highlighter-rouge">libssl-dev</code>.</p>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo apt-get install libssl-dev
+</code></pre></div>
+<p>For the error <code class="highlighter-rouge">configure: error: lzo enabled but missing</code></p>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo apt-get install liblzo2-dev
+</code></pre></div>
+<p>For the error <code class="highlighter-rouge">configure: error: libpam required but missing </code></p>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>sudo apt-get install libpam0g-dev
+</code></pre></div>
+<p>Great thanks for <a href="https://stackoverflow.com/users/2640725/deadcode">deadcode</a>’s <a href="https://stackoverflow.com/a/28431851">advice</a> on Stack Overflow.</p>
+
+<p>Next, set up PKI and CA! TODO</p>

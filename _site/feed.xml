@@ -6,23 +6,36 @@
 </description>
     <link>http://www.mengyibai.cn/</link>
     <atom:link href="http://www.mengyibai.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Nov 2017 11:17:17 +0800</pubDate>
-    <lastBuildDate>Fri, 10 Nov 2017 11:17:17 +0800</lastBuildDate>
+    <pubDate>Fri, 29 Dec 2017 18:08:41 +0800</pubDate>
+    <lastBuildDate>Fri, 29 Dec 2017 18:08:41 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>设置OPDS服务器</title>
+        <description>&lt;p&gt;我有不少电子书，用calibre管理。问题来了：电子书存在电脑上，可我喜欢用手机iPad看。每次把书从电脑到手机拷贝来拷贝去，烦死人了！有什么优雅的解决方案呢？答案是OPDS服务器。&lt;/p&gt;
+
+&lt;p&gt;OPDS，即Open Pul&lt;/p&gt;
+</description>
+        <pubDate>Sat, 11 Nov 2017 21:29:00 +0800</pubDate>
+        <link>http://www.mengyibai.cn/%E8%AE%BE%E7%BD%AEOPDS%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/%E8%AE%BE%E7%BD%AEOPDS%E6%9C%8D%E5%8A%A1%E5%99%A8.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Compressing HTML files in Jekyll</title>
         <description>&lt;p&gt;The HTML files Jekyll generates are standard and conforming, but one small problem remains: they have lots of whitespaces in them. It not only makes control freaks like me find it diffcult to read, but also for a little less efficent for the DOM parsers to parse as well. Also, it makes the website a little bit more data consuming. So I’ll setup a plugin to automatically simplifies the files when generating them.&lt;/p&gt;
 
 &lt;p&gt;The plugin is called &lt;a href=&quot;http://jch.penibelst.de/&quot;&gt;jekyll-compress-html&lt;/a&gt;. It uses Liquid, the language Jekyll uses to describe the way to generate HTML files. To set it up, all you need to do is place the Liquid file &lt;code class=&quot;highlighter-rouge&quot;&gt;compress.html&lt;/code&gt; under the &lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; folder. Then add the following front matter before the &lt;code class=&quot;highlighter-rouge&quot;&gt;default.html&lt;/code&gt; template:&lt;/p&gt;
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;compress&lt;/span&gt;
 &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Rebuild your website and all should be in order!&lt;/p&gt;
 
 &lt;p&gt;A few settings are be available. Add the settings in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file. The defaults settings are:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;compress_html:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compress_html:
   clippings: []
   comments: []
   endings: []
@@ -35,9 +48,11 @@
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;startings&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;endings&lt;/code&gt; are for removing optional starting and ending tags. I don’t wish to use it, as it would make the file XML non-conforming. Might cause a tiny bit of trouble for some browsers. &lt;code class=&quot;highlighter-rouge&quot;&gt;comments&lt;/code&gt; is for removing HTML comments. There are no comments here at all, so I’ll just leave it be. &lt;code class=&quot;highlighter-rouge&quot;&gt;clippings&lt;/code&gt; is an array of elements around which whitespace will be removed. Use &lt;code class=&quot;highlighter-rouge&quot;&gt;all&lt;/code&gt; will remove all which are safe to remove, which I did. Others are for debug purposes, which I left alone.&lt;/p&gt;
 </description>
         <pubDate>Thu, 09 Nov 2017 23:11:00 +0800</pubDate>
-        <link>http://www.mengyibai.cn/2017/11/09/compressing-html-files-in-jekyll.html</link>
-        <guid isPermaLink="true">http://www.mengyibai.cn/2017/11/09/compressing-html-files-in-jekyll.html</guid>
+        <link>http://www.mengyibai.cn/compressing-html-files-in-jekyll.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/compressing-html-files-in-jekyll.html</guid>
         
+        
+        <category>shit</category>
         
       </item>
     
@@ -46,8 +61,8 @@
         <description>&lt;p&gt;Atom is a great great great editor! It made my editing blogs much easier! I’ll document its usage another day.&lt;/p&gt;
 </description>
         <pubDate>Wed, 08 Nov 2017 01:38:00 +0800</pubDate>
-        <link>http://www.mengyibai.cn/2017/11/08/atom.html</link>
-        <guid isPermaLink="true">http://www.mengyibai.cn/2017/11/08/atom.html</guid>
+        <link>http://www.mengyibai.cn/atom.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/atom.html</guid>
         
         
       </item>
@@ -62,12 +77,12 @@
 
 &lt;p&gt;The Server side software is not diffcult to install. You could use your server’s package manager to download a pre-built version, or complie it yourself. For example, in Ubuntu/Debian, use&lt;/p&gt;
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;sudo apt-get install openvpn
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install openvpn
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Or compile it like I did&lt;/p&gt;
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;wget https://swupdate.openvpn.org/community/releases/openvpn-2.4.4.tar.gz
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget https://swupdate.openvpn.org/community/releases/openvpn-2.4.4.tar.gz
 &lt;span class=&quot;c&quot;&gt;# use the up to date tar archive on https://openvpn.net&lt;/span&gt;
 tar xfz openvpn-2.4.4.tar.gz
 &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;openvpn-2.4.4
@@ -77,21 +92,21 @@ make install &lt;span class=&quot;c&quot;&gt;# might need to put sudo before tha
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Note when configuring, a few error messages may appear. For the error &lt;code class=&quot;highlighter-rouge&quot;&gt;configure: error: ssl is required but missing&lt;/code&gt;, you will need to install &lt;code class=&quot;highlighter-rouge&quot;&gt;libssl-dev&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;sudo apt-get install libssl-dev
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install libssl-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For the error &lt;code class=&quot;highlighter-rouge&quot;&gt;configure: error: lzo enabled but missing&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;sudo apt-get install liblzo2-dev
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install liblzo2-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For the error &lt;code class=&quot;highlighter-rouge&quot;&gt;configure: error: libpam required but missing &lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;sudo apt-get install libpam0g-dev
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install libpam0g-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Great thanks for &lt;a href=&quot;https://stackoverflow.com/users/2640725/deadcode&quot;&gt;deadcode&lt;/a&gt;’s &lt;a href=&quot;https://stackoverflow.com/a/28431851&quot;&gt;advice&lt;/a&gt; on Stack Overflow.&lt;/p&gt;
 
 &lt;p&gt;Next, set up PKI and CA! TODO&lt;/p&gt;
 </description>
         <pubDate>Fri, 03 Nov 2017 00:00:00 +0800</pubDate>
-        <link>http://www.mengyibai.cn/2017/11/03/Setting-Up-OpenVPN.html</link>
-        <guid isPermaLink="true">http://www.mengyibai.cn/2017/11/03/Setting-Up-OpenVPN.html</guid>
+        <link>http://www.mengyibai.cn/Setting-Up-OpenVPN.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/Setting-Up-OpenVPN.html</guid>
         
         
       </item>
@@ -143,8 +158,8 @@ Similar limits exists just before the jump.&lt;/p&gt;
 &lt;p&gt;To be precise, the phenomenon is a &lt;em&gt;ringing&lt;/em&gt; one. Not only does the signal overshoots, it also undershoots. It’s actually called a &lt;em&gt;ringing artifact&lt;/em&gt;, a important problem in signal processing.&lt;/p&gt;
 </description>
         <pubDate>Tue, 31 Oct 2017 23:30:00 +0800</pubDate>
-        <link>http://www.mengyibai.cn/2017/10/31/Gibbs-phenomenon.html</link>
-        <guid isPermaLink="true">http://www.mengyibai.cn/2017/10/31/Gibbs-phenomenon.html</guid>
+        <link>http://www.mengyibai.cn/Gibbs-phenomenon.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/Gibbs-phenomenon.html</guid>
         
         
       </item>
@@ -162,7 +177,7 @@ Similar limits exists just before the jump.&lt;/p&gt;
 &lt;p&gt;First, check what markdown editor you are using. Check the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file in the root directory of your blog. If the setting for &lt;code class=&quot;highlighter-rouge&quot;&gt;markdown&lt;/code&gt; is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;kramdown&lt;/code&gt;, then bingo! Kramdown offers built-in support. Add the line &lt;code class=&quot;highlighter-rouge&quot;&gt;mathjax: true&lt;/code&gt; after that &lt;code class=&quot;highlighter-rouge&quot;&gt;markdown: krandown&lt;/code&gt; line.&lt;/p&gt;
 
 &lt;p&gt;Then add this code snippet just before the &lt;code class=&quot;highlighter-rouge&quot;&gt;head&lt;/code&gt; tag. To do so, go to the &lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt; file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; directory. Note its HEAD, not HEADER. Head is for the contents inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; element in the html document, the place where you put all the scripts and metadatum, while “header” is for the uppermost part of the page. Add this line:&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;codehilite&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;TeX-AMS-MML_HTMLorMML&lt;/code&gt; is for, quoting the &lt;a href=&quot;http://docs.mathjax.org/en/latest/configuration.html&quot;&gt;MathJax document&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -181,8 +196,8 @@ and block:
 
 </description>
         <pubDate>Sun, 29 Oct 2017 23:14:00 +0800</pubDate>
-        <link>http://www.mengyibai.cn/2017/10/29/setting-up-MathJax.html</link>
-        <guid isPermaLink="true">http://www.mengyibai.cn/2017/10/29/setting-up-MathJax.html</guid>
+        <link>http://www.mengyibai.cn/setting-up-MathJax.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/setting-up-MathJax.html</guid>
         
         
       </item>
@@ -234,8 +249,8 @@ note the delta function here is its three dimensional generalization.&lt;/p&gt;
 \]&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Oct 2017 20:13:46 +0800</pubDate>
-        <link>http://www.mengyibai.cn/2017/10/12/Green-Function-Method-and-reciporcity.html</link>
-        <guid isPermaLink="true">http://www.mengyibai.cn/2017/10/12/Green-Function-Method-and-reciporcity.html</guid>
+        <link>http://www.mengyibai.cn/Green-Function-Method-and-reciporcity.html</link>
+        <guid isPermaLink="true">http://www.mengyibai.cn/Green-Function-Method-and-reciporcity.html</guid>
         
         
       </item>

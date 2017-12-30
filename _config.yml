@@ -16,6 +16,7 @@ twitter_username:
 github_username: YibaiMeng
 zhihu_username: yibaiafarensis
 
+permalink: /:title.html
 # Build settings
 markdown: kramdown
 mathjax: true
